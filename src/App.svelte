@@ -1,32 +1,17 @@
+<h1>svelte-spa-router sample</h1>
+<h2>Basic routing</h2>
+
+<ul>
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/test1">Test1</a></li>
+    <li><a href="#/hello/svelte">Say hi!</a></li>
+    <li><a href="#/wild/card">Wildcard route</a></li>
+    <li><a href="#/does/not/exist">Not found</a></li>
+</ul>
+
+<Router {routes} />
+
 <script>
-	export let name;
-
-	name = "svelte";
+    import Router from 'svelte-spa-router';
+    import routes from './routes'
 </script>
-
-<main>ssssssssssssssssssssssssssssssssss111111111sss!!!!!!!!!!!!!
-	<h1>Welcome to {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
