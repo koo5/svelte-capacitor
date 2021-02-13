@@ -1,9 +1,9 @@
 // Components
-import Home from './routes/Home.svelte'
-import Test1 from './routes/Test1.svelte';
-import Name from './routes/Name.svelte'
-import Wild from './routes/Wild.svelte'
-import NotFound from './routes/NotFound.svelte'
+import Home from './Home.svelte'
+import Test1 from './Test1.svelte';
+import Name from './Name.svelte'
+import Wild from './Wild.svelte'
+import NotFound from './NotFound.svelte'
 
 // Export the route definition object
 export default {
