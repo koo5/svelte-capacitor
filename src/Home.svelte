@@ -4,6 +4,14 @@
 	let {_quads,query} = QS;
 	let result = query({});
 
+	function load_quads()
+	{
+
+
+
+
+	}
+
 	function addquad()
 	{
 		_quads.update((old) => {
@@ -16,16 +24,18 @@
 			let now = old.concat(quad);
 			return now;
 		});
-		xxx = result.subscribe;
 	}
 
-	let xxx = 1;
+
+
 </script>
 
 <main>
 
 	<hr>
-	<button on:click|preventDefault='{() => addquad()}'>Add</button>
+	<button on:click|preventDefault='{() => load_quads()}'>Load quads</button>
+	<hr>
+	<button on:click|preventDefault='{() => addquad()}'>Add random quad</button>
 	<br>
 	<h3>the quadstore is now:</h3>
 	<ul>

@@ -1,5 +1,6 @@
 <ul>
 	<li><a href="#/">Home</a></li>
+	<li><a href="#/cytoscape">Cytoscape</a></li>
 	<li><a href="#/hello/svelte">Say hi!</a></li>
 	<li><a href="#/wild/card">Wildcard route</a></li>
 </ul>

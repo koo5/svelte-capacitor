@@ -1,4 +1,26 @@
 import { readable, derived, writable } from 'svelte/store';
+import * as N3 from 'n3';
+
+export function myrdf_quad_query_save_as_file_download($query)
+{
+	const writer = new N3.Writer({ prefixes: prefixes_as_dict() });
+	/*console.log(get(quad_store))
+	get(quad_store).forEach((i) => writer.addQuad(i));
+	get(quad_store).forEach((i) => console.log(i));
+	console.log(writer)*/
+	const q = $query;
+	//console.log(q)
+	const cb = (x) => {if (x)console.log(x)}
+	for (var i = 0; i < q.length; i++)
+		writer.addQuad(q[i],cb);
+	//console.log(writer)
+	writer.end((error, result) => {
+		if (error)
+			throw error;
+		let blob = new Blob([result], {type: "text/plain;charset=utf-8"});
+		saveAs(blob, "hello world.trig");
+	})
+}
 
 export const quadstore = (__quad_list) =>
 {
