@@ -1,6 +1,13 @@
 import Home from './Home.svelte'
 import Test1 from './Test1.svelte';
 import Cytoscape from './Cytoscape.svelte'
+//import TextEditor from './TextEditor.svelte';
+import Prefixes from './Prefixes.svelte';
+import Quads from './Quads.svelte';
+import Log from './Log.svelte';
+
+
+
 import Name from './Name.svelte'
 import Wild from './Wild.svelte'
 import NotFound from './NotFound.svelte'
