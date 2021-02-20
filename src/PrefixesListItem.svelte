@@ -1,5 +1,5 @@
 <script>
-	import {log} from '../lib/log_store.js';
+	import {log} from './log_store.js';
 
 	export let prefix;
 
@@ -22,7 +22,7 @@
 
 <style>
 
-	input, select {
+	input {
 		width: 40%;
 	}
 

@@ -13,6 +13,10 @@ export function try_parse_rdf_node(x)
 }
 
 
+export function rdf_node_textual_representation(n)
+{
+	return n;
+}
 
 
 function my_quad_to_n3_quad(i)

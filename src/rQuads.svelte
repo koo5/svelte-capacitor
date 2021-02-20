@@ -1,8 +1,9 @@
 <script>
 	import QuadsListItem from './QuadsListItem.svelte';
-	import {query, save_myrdf_quad_query_as_file_download} from './pouchdb_quadstore.js';
+	import {query} from './my_quadstore.js';
+	import {save_myrdf_quad_query_as_file_download} from './myrdf_io.js';
 
-
+	let quads = query({});
 
 </script>
 
@@ -13,7 +14,7 @@
 		store is empty.
 	{/if}
 
-	<button on:click={()=>save_myrdf_quad_query_as_file_download($inmemory_quadstore)}>save as TriG</button>
+	<button on:click={()=>save_myrdf_quad_query_as_file_download($quads)}>save as TriG</button>
 
 	<ul>
 		add:

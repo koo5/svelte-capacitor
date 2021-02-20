@@ -1,7 +1,7 @@
 <script>
 
-	import {generate_unique_uri, df, M, RDF, URI_PLAINTEXT} from '../lib/quads.js';
-	import {log} from '../lib/log_store.js';
+	import {generate_unique_uri, df, M, RDF, URI_PLAINTEXT} from './quads.js';
+	import {log} from './log_store.js';
 	import {quads} from '../stores.js';
 	import {reinterpret_element_contents_as_hierarchical_notes,editorElement,siblingElementByClass} from '../lib/actions.js';
 	import {saveAs} from 'file-saver';

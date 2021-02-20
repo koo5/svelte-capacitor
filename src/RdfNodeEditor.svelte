@@ -1,8 +1,7 @@
 <script>
 
 	import SvelteTooltip from 'svelte-tooltip';
-	import {rdf_node_textual_representation} from '../lib/quads.js';
-	import {rdf_node_parsing_result} from '../lib/quads.js';
+	import {rdf_node_parsing_result, rdf_node_textual_representation} from 'myrdf_io.js';
 
 
 	// popover hack https://github.com/sveltejs/sapper/issues/774
@@ -12,7 +11,7 @@
 	onMount(async () => {
         Popover = (await import('svelte-popover')).default;
     });
-	// /popover hack
+	// </popover hack>
 
 
 
@@ -28,7 +27,7 @@
 	{
 		const textbox_contents_string = e.target.value;
 		if (textbox_contents_string === '' && ignore_empty)
-
+			return;
 		const r = rdf_node_parsing_result(textbox_contents_string);
 		if ('errors' in r)
 			errors = r.errors;
@@ -63,7 +62,7 @@
 		width: 1em;
 		height: 1em;
 	}
-	input, select {
+	input {
 		width: 20%;
 	}
 

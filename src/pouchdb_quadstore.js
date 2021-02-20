@@ -1,10 +1,13 @@
-import {derived} from 'svelte/store';
+import {derived, writable} from 'svelte/store';
+
 
 export const quadstore = () =>
 {
+	let _writable = writable({});
+
 	/* let's not support multiple instances yet */
 	var db = new PouchDB('kittens');
-	console.log(await db.info());
+	db.info(console.log);
 
 	db.changes({
 		since: 'now',
@@ -14,19 +17,16 @@ export const quadstore = () =>
 		db.allDocs({include_docs: true, descending: true}, function (err, doc)
 		{
 			if (err) alert(err);
-			fire
-			!
-		}
-
-
+			console.log("db.allDocs = ");
+			console.log(doc);
+			_writable.set(doc);
+		});
 	});
 
-
-	let query = (_query) => derived(_quads, $_quads =>
+	let query = (_query) => derived(_writable, $_quad_dict =>
 	{
 		return filter_quads_by_query(_query, $_quads);
 	});
-
 
 	function addQuad(q)
 	{
@@ -35,7 +35,6 @@ export const quadstore = () =>
 			if (err) alert(err);
 		});
 	}
-
 
 	return {query};
 }
@@ -57,8 +56,7 @@ function filter_quads_by_query(query, __quad_list)
 {
 	let result = [];
 	var i = 0;
-	__quad_list.forEach(q)
-=>
+	__quad_list.forEach(q =>
 	{
 		i++;
 		if (
@@ -68,7 +66,7 @@ function filter_quads_by_query(query, __quad_list)
 			match(query.g, q.g)
 		)
 			result.push({...q, idx: i});
-	}
+	});
 	return result;
 }
 

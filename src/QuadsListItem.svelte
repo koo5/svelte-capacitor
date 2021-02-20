@@ -1,6 +1,6 @@
 <script>
 
-	import {log} from '../lib/log_store.js';
+	import {log} from './log_store.js';
 	import RdfNodeEditor from './RdfNodeEditor.svelte';
 	import SvelteTooltip from 'svelte-tooltip';
 

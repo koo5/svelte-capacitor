@@ -1,5 +1,5 @@
 <script>
-	import {log_store} from '../lib//log_store.js';
+	import {log_store} from './log_store.js';
 
 </script>
 

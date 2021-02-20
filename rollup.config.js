@@ -57,8 +57,8 @@ export default {
 			browser: true,
 			dedupe: ['svelte']
 		}),
-		commonjs(),
-		
+		commonjs({preferBuiltins: false}),
+
 		typescript({}),
 
 		// In dev mode, call `npm run start` once

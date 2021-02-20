@@ -1,9 +1,8 @@
 <script>
 	import Router from 'svelte-spa-router';
 	import Home from './rHome.svelte'
-	import Test1 from './rTest1.svelte';
 	import Cytoscape from './rCytoscape.svelte'
-	import TextEditor from './rTextEditor.svelte';
+	//import TextEditor from './rTextEditor.svelte';
 	import Prefixes from './rPrefixes.svelte';
 	import Quads from './rQuads.svelte';
 	import Log from './rLog.svelte';
